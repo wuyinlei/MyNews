@@ -6,18 +6,15 @@ import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
 
-/**
- * 自定义的一个相对布局
- */
 public class CustomRelativeLayout extends RelativeLayout {
     private DragLayout dl;
 
     public CustomRelativeLayout(Context context) {
-        this(context, null);
+        super(context);
     }
 
     public CustomRelativeLayout(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
     }
 
     public CustomRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -28,12 +25,6 @@ public class CustomRelativeLayout extends RelativeLayout {
         this.dl = dl;
     }
 
-    /**
-     * 拦截触摸事件
-     *
-     * @param event
-     * @return
-     */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         if (dl.getStatus() != DragLayout.Status.Close) {
@@ -42,13 +33,6 @@ public class CustomRelativeLayout extends RelativeLayout {
         return super.onInterceptTouchEvent(event);
     }
 
-
-    /**
-     * 重写触摸事件
-     *
-     * @param event
-     * @return
-     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (dl.getStatus() != DragLayout.Status.Close) {

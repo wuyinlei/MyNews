@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="第二个Fragment..."
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:text="我是Fragment容器..."
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
 </LinearLayout>
